@@ -1,0 +1,14 @@
+#!/usr/bin/env php
+<?php
+
+require_once __DIR__ . '/../vendor/autoload.php';
+
+use App\Commands\GetScoreUserByIdCommand;
+use App\Repository\UsersRepository;
+use Symfony\Component\Console\Application;
+use App\Commands\SummaryAllScoreCommand;
+
+$app = new Application();
+$app->add(new SummaryAllScoreCommand(new UsersRepository()));
+$app->add(new GetScoreUserByIdCommand(new UsersRepository()));
+$app->run();
