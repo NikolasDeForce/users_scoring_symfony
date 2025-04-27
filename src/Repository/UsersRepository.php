@@ -54,12 +54,6 @@ class UsersRepository extends ServiceEntityRepository
             return $users;
        }
 
-       public function findAllUsers(Users $user) {
-            $users = $this->findByUserField($user);
-
-            return $users;
-       }
-
     //    public function findOneBySomeField($value): ?Users
     //    {
     //        return $this->createQueryBuilder('u')
