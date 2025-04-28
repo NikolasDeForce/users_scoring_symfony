@@ -8,7 +8,7 @@ use Src\ScoringTest\ScoringTest;
 
 class UsersUnitTest extends TestCase
 {
-    public function testScoringFunc(): void
+    public function test_User_Have_Gmail_And_Bilain(): void
     {
         $user = new Users();
         $user->setFirstName('UserFirst');
@@ -26,5 +26,44 @@ class UsersUnitTest extends TestCase
 
         //Общее кол-во баллов 34, сравним с функцией
         $this->assertEquals(34, $score);
+    }
+
+    public function test_User_Have_Mail_And_Megaphone(): void
+    {
+        $user = new Users();
+        $user->setFirstName('UserFirst');
+        $user->setLastName('LastName');
+        //МЕГАФОН +10
+        $user->setPhone('+7920093112');
+        //MAIL + 6
+        $user->setEmail('user@mail.com');
+        //Высшее образование +15
+        $user->setEducation('Высшее образование');
+        //Согласие на обработку = true +4
+        $user->setIsAcceptData('1');
+
+        $score = ScoringTest::scoring_test($user);
+
+        //Общее кол-во баллов 25, сравним с функцией
+        $this->assertEquals(35, $score);
+    }
+
+    public function test_User_Have_Yandex_And_Mts(): void
+    {
+        $user = new Users();
+        $user->setFirstName('UserFirst');
+        $user->setLastName('LastName');
+        //МТС +3 НОМЕР без + и 7 ТЕСТ
+        $user->setPhone('913093112');
+        //YANDEX +8
+        $user->setEmail('user@gmail.com');
+        //Среднее образование +5
+        $user->setEducation('Среднее образование');
+        //Согласие на обработку = false +0
+
+        $score = ScoringTest::scoring_test($user);
+
+        //Общее кол-во баллов 16, сравним с функцией
+        $this->assertEquals(16, $score);
     }
 }
