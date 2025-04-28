@@ -66,4 +66,23 @@ class UsersUnitTest extends TestCase
         //Общее кол-во баллов 16, сравним с функцией
         $this->assertEquals(16, $score);
     }
+
+    public function test_User_Have_AnotherDomen_And_AnotherPhone(): void
+    {
+        $user = new Users();
+        $user->setFirstName('UserFirst');
+        $user->setLastName('LastName');
+        //Иной оператор +1 НОМЕР без + и 7 ТЕСТ
+        $user->setPhone('1234456781');
+        //Иной домен +3
+        $user->setEmail('user@cloun.com');
+        //Специальное образование +10
+        $user->setEducation('Специальное образование');
+        //Согласие на обработку = false +0
+
+        $score = ScoringTest::scoring_test($user);
+
+        //Общее кол-во баллов 16, сравним с функцией
+        $this->assertEquals(13, $score);
+    }
 }
