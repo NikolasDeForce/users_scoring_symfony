@@ -13,7 +13,7 @@ Web-приложение для расчета скоринга клиентов
 
 Для начала `git clone https://github.com/NikolasDeForce/users_scoring_symfony`. Далее, убедитесь что у вас стоят все нужные утилиты и зависимости. А именно: Composer&Symfony и MySQL `composer update`, `composer dump -o`.
 
-Измените параменты подключения к БД в файле .env, создайте БД, таблицу и сделайте миграции. Для запуска миграций `bin/console doctrine:migrations:migrate`.
+Измените параметры подключения к БД в файле .env, создайте БД, таблицу и сделайте миграции. Для запуска миграций `bin/console doctrine:migrations:migrate`.
 
 Подготовлена фикстура с сгенерированными данными клиентов для БД. Для запуска миграций фикстуры `bin/console doctrine:fixtures:load`
 
