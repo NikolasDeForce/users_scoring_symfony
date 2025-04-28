@@ -878,3 +878,13 @@ f62101,127.0.0.1,GET,http://localhost:8000/users/1,1745809638,,200,request
 925ede,127.0.0.1,GET,http://localhost:8000/users,1745809662,,200,request
 10d0c8,127.0.0.1,GET,http://localhost:8000/users,1745811266,,200,request
 1f85e2,127.0.0.1,GET,http://localhost:8000/users,1745811282,,200,request
+20e73a,127.0.0.1,GET,http://localhost:8000/users,1745815854,,200,request
+69d085,127.0.0.1,GET,http://localhost:8000/favicon.ico,1745815854,fd218e,404,request
+fd218e,127.0.0.1,GET,http://localhost:8000/favicon.ico,1745815854,,404,request
+e514d4,127.0.0.1,GET,http://localhost:8000/users/new,1745815856,,200,request
+36f5d3,127.0.0.1,GET,http://localhost:8000/users/new,1745815866,b68af9,500,request
+b68af9,127.0.0.1,POST,http://localhost:8000/users/new,1745815866,,500,request
+fd3158,127.0.0.1,POST,http://localhost:8000/users/new,1745815923,,302,request
+adf5e2,127.0.0.1,GET,http://localhost:8000/users,1745815923,,200,request
+a0156b,127.0.0.1,GET,http://localhost:8000/users?page=5,1745815925,,200,request
+f9df81,127.0.0.1,GET,http://localhost:8000/users/21,1745815926,,200,request

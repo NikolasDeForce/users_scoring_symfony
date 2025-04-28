@@ -49,7 +49,7 @@ class Scoring {
                     $score += 1;
                 }
             } else {
-                $user_data["phone"] = 'not russian phone numbers';
+                $user->setPhone("not russian number");
                 $score += 0;
             }
 
