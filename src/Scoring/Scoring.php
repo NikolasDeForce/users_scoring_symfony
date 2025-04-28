@@ -3,7 +3,6 @@
 namespace Src\Scoring;
 
 use App\Entity\Users;
-use App\Repository\UsersRepository;
 use Symfony\Component\Form\FormInterface;
 
 class Scoring {
