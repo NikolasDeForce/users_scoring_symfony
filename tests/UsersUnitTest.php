@@ -82,7 +82,7 @@ class UsersUnitTest extends TestCase
 
         $score = ScoringTest::scoring_test($user);
 
-        //Общее кол-во баллов 16, сравним с функцией
+        //Общее кол-во баллов 13, сравним с функцией
         $this->assertEquals(13, $score);
     }
 }
