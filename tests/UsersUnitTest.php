@@ -8,6 +8,7 @@ use Src\ScoringTest\ScoringTest;
 
 class UsersUnitTest extends TestCase
 {
+    //Проверяем домен Gmail и оператор Билайн, Высшее образование и согласие на обработку данные = true
     public function test_User_Have_Gmail_And_Bilain(): void
     {
         $user = new Users();
@@ -28,6 +29,7 @@ class UsersUnitTest extends TestCase
         $this->assertEquals(34, $score);
     }
 
+    //Проверяем домен mail, оператор Мегафон, Высшее образование, и согласие = true
     public function test_User_Have_Mail_And_Megaphone(): void
     {
         $user = new Users();
@@ -48,6 +50,7 @@ class UsersUnitTest extends TestCase
         $this->assertEquals(35, $score);
     }
 
+    //Проверяем домен Yandex и оператор mts, Среднее образование и согласие = false
     public function test_User_Have_Yandex_And_Mts(): void
     {
         $user = new Users();
@@ -67,6 +70,7 @@ class UsersUnitTest extends TestCase
         $this->assertEquals(16, $score);
     }
 
+    //Проверяем иной домен и иной оператор, Специальное образование и согласие = false
     public function test_User_Have_AnotherDomen_And_AnotherPhone(): void
     {
         $user = new Users();
