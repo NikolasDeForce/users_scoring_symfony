@@ -23,7 +23,7 @@
                 <td>{{ user.lastName }}</td>
                 <td>{{ user.scoring }}</td>
                 <td>
-                    <a class="btn btn-warning" href="{{ path('app_users_show', {'id': user.id}) }}">Изменить</a><br>
+                    <a class="btn btn-primary" href="{{ path('app_users_show', {'id': user.id}) }}">Информация</a><br>
                     {{ include('users/_delete_form.html.twig') }}
                 </td>
             </tr>

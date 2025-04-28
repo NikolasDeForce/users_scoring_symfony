@@ -148,10 +148,10 @@ class __TwigTemplate_5b3914448191facff9a139ae1777db73 extends Template
             yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["user"], "scoring", [], "any", false, false, false, 24), "html", null, true);
             yield "</td>
                 <td>
-                    <a class=\"btn btn-warning\" href=\"";
+                    <a class=\"btn btn-primary\" href=\"";
             // line 26
             yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_users_show", ["id" => CoreExtension::getAttribute($this->env, $this->source, $context["user"], "id", [], "any", false, false, false, 26)]), "html", null, true);
-            yield "\">Изменить</a><br>
+            yield "\">Информация</a><br>
                     ";
             // line 27
             yield Twig\Extension\CoreExtension::include($this->env, $context, "users/_delete_form.html.twig");
@@ -256,7 +256,7 @@ class __TwigTemplate_5b3914448191facff9a139ae1777db73 extends Template
                 <td>{{ user.lastName }}</td>
                 <td>{{ user.scoring }}</td>
                 <td>
-                    <a class=\"btn btn-warning\" href=\"{{ path('app_users_show', {'id': user.id}) }}\">Изменить</a><br>
+                    <a class=\"btn btn-primary\" href=\"{{ path('app_users_show', {'id': user.id}) }}\">Информация</a><br>
                     {{ include('users/_delete_form.html.twig') }}
                 </td>
             </tr>

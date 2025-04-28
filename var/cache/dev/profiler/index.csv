@@ -867,3 +867,14 @@ af3f71,127.0.0.1,GET,http://localhost:8000/users/new,1745766809,,200,request
 3d82f8,127.0.0.1,POST,http://localhost:8000/users/new,1745766815,,302,request
 8a1a96,127.0.0.1,GET,http://localhost:8000/users,1745766815,,200,request
 5742b4,127.0.0.1,GET,http://localhost:8000/users?page=5,1745766816,,200,request
+2a54bd,127.0.0.1,GET,http://localhost:8000/users?page=5,1745809565,,200,request
+ee7dde,127.0.0.1,GET,http://localhost:8000/favicon.ico,1745809565,ec996d,404,request
+ec996d,127.0.0.1,GET,http://localhost:8000/favicon.ico,1745809565,,404,request
+22ffcb,127.0.0.1,GET,http://localhost:8000/users?page=1,1745809566,,200,request
+68a5d6,127.0.0.1,GET,http://localhost:8000/users/new,1745809610,,200,request
+fdf182,127.0.0.1,GET,http://localhost:8000/users,1745809637,,200,request
+f62101,127.0.0.1,GET,http://localhost:8000/users/1,1745809638,,200,request
+32a1e6,127.0.0.1,GET,http://localhost:8000/users/1/edit,1745809653,,200,request
+925ede,127.0.0.1,GET,http://localhost:8000/users,1745809662,,200,request
+10d0c8,127.0.0.1,GET,http://localhost:8000/users,1745811266,,200,request
+1f85e2,127.0.0.1,GET,http://localhost:8000/users,1745811282,,200,request
