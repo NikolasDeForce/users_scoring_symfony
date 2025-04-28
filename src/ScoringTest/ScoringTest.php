@@ -47,7 +47,7 @@ class ScoringTest {
                 $score += 1;
             }
         } else {
-            $user_data["phone"] = 'not russian phone numbers';
+            $users->setPhone('not russian phone numbers');
             $score += 0;
         }
 
