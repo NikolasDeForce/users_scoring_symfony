@@ -13,8 +13,21 @@ class ScoringTest {
         $mts_nums = array('910','915','916','917','911','981','918','988','989','912','917','919','982','983','914','984');
 
         $num_first = substr($users->getPhone(),0,1);
-        if ($num_first == "+") {
-            $num_pref = substr($users->getPhone(),2,3);
+        switch ($num_first) {
+            case '+':
+                $num_pref = substr($users->getPhone(),2,3);
+                if (in_array($num_pref, $megaphone_nums)) {
+                    $score += 10;
+                } elseif (in_array($num_pref, $bilain_nums)) {
+                    $score += 5;
+                } elseif (in_array($num_pref, $mts_nums)) {
+                    $score += 3;
+                } else {
+                    $score += 1;
+                }
+                break;
+            case '7':
+                $num_pref = substr($users->getPhone(),1,3);
             if (in_array($num_pref, $megaphone_nums)) {
                 $score += 10;
             } elseif (in_array($num_pref, $bilain_nums)) {
@@ -24,18 +37,8 @@ class ScoringTest {
             } else {
                 $score += 1;
             }
-        } elseif($num_first == "7") {
-            $num_pref = substr($users->getPhone(),1,3);
-            if (in_array($num_pref, $megaphone_nums)) {
-                $score += 10;
-            } elseif (in_array($num_pref, $bilain_nums)) {
-                $score += 5;
-            } elseif (in_array($num_pref, $mts_nums)) {
-                $score += 3;
-            } else {
-                $score += 1;
-            }
-        } elseif ($num_first == "9") {
+            break;
+        case '9':
             $nums_pref = substr($users->getPhone(),0,3);
             if (in_array($nums_pref, $megaphone_nums)) {
                 $score += 10;
@@ -46,40 +49,52 @@ class ScoringTest {
             } else {
                 $score += 1;
             }
-        } else {
-            $users->setPhone('not russian phone numbers');
+            break;
+        default:
+            $users->setPhone("not russian number");
             $score += 0;
+            break;
         }
 
         //Считаем скоринг по домену почты
         $email_explode = explode("@", $users->getEmail());
         $email_user = explode(".", $email_explode[1]);
-        if ($email_user[0] == "gmail") {
-            $score += 10;
-        } elseif ($email_user[0] == "yandex") {
-            $score += 8;
-        } elseif ($email_user[0] == "mail") {
-            $score += 6;
-        } else {
-            $score += 3;
+        switch ($email_user[0]) {
+            case "gmail":
+                $score += 10;
+                break;
+            case "yandex":
+                $score += 8;
+                break;
+            case "mail":
+                $score += 6;
+                break;
+            default:
+                $score += 3;
+                break;
         }
 
         //Считаем скоринг по образованию
         $edu = $users->getEducation();
-        if ($edu == "Высшее образование") {
-            $score += 15;
-        } elseif ($edu == "Специальное образование") {
-            $score += 10;
-        } else {
-            $score += 5;
+        switch ($edu) {
+            case "Высшее образование":
+                $score += 15;
+                break;
+            case "Специальное образование":
+                $score += 10;
+                break;
+            default:
+                $score += 5;
+                break;
         }
 
         //Считаем скоринг по галочке
-        if ($users->getIsAcceptData() == null)  {
-            $score += 0;
-                
-        } else {
-            $score += 4;
+        switch ($users->getIsAcceptData()) {
+            case '1':
+                $score += 4;
+                break;
+            default:
+                $score += 0;
         }
 
     return $score;
